@@ -1,0 +1,103 @@
+<!-- svg -->
+<!-- <svg> creates a canvas to paint shapes. Similar to canvas -->
+<!-- Make sure to set the correct width and height for <svg>. It is possiable for the shape/shapes not to fit into a smaller <svg> area -->
+
+<svg width="960" height="600">
+    <!-- Circle -->
+
+    <!-- <circle> creates a circle -->
+
+    <!-- r attribute controls radius. Value is in pixils -->
+
+    <!-- cx attribute controls the center x-cordinate of our circle shape. -->
+    <!-- The larger the value of the cx attribute the more it moves to the right. -->
+
+    <!-- cy attribute controls the center y-cordinate of our circle shape. -->
+    <!-- The larger the value of the cy attribute the more it moves down. -->
+
+    <circle cx="42" cy="50" r="20"></circle>
+
+    <!-- Rectangle -->
+
+    <!-- <rect> creates a rectangle -->
+
+    <!-- height attribute controls the height of the rectangle. -->
+    <!-- width attribute controls the width of the rectangle. -->
+    <!-- height and width attributes must be defined in order for rectangle to render on screen. -->
+
+    <!-- x attribute controls the x-cordinate of the rectangle. -->
+    <!-- y attribute controls the y-cordinate of the rectangle. -->
+
+    <rect x="23" y="100" height="20" width="40"></rect>
+
+    <!-- Fill -->
+
+    <!-- By default shapes will be the color black in svgs. -->
+
+    <!-- We can use the fill attribute to add color to our shapes. -->
+    <!-- The fill attribute can take the string colors, hex colors and even rgb/rgba colors -->
+
+    <circle cx="42" cy="180" r="20" fill="rgba(255, 140, 150, .4)"></circle>
+
+    <!-- Group -->
+
+    <!-- <g> groups shapes together sort of like grouping in flash. -->
+
+    <!-- transform attribute works the same as CSS. It gives us access to values that transform uses. -->
+    <!-- translate property is the same as CSS. 1st argument is the x-axis and the 2nd argument is the y-axis. -->
+    <!-- By combining these two we can move our shapes around as a group similar to how we did in flash. -->
+
+    <!-- fill attribute on <g> will give color to all shapes in the group. -->
+    <!-- If a shape in the group has its own fill color that color will override the <g> fill color. -->
+
+    <g transform="translate(0, 230)" fill="green">
+        <rect x="100" y="25" height="50" width="50"></rect>
+        <circle cx="50" cy="50" r="40" fill="rgba(20, 140, 255, .4)"></circle>
+    </g>
+
+    <!-- Stroke -->
+
+    <!-- stroke attribute puts an outline around the shape. The value is the color of the stroke. -->
+
+    <!-- stroke-width attribute lets us control the thickness of the stroke. -->
+
+    <circle cx="62" cy="400" r="50" fill="rgba(20, 140, 255, .4)" stroke="black" stroke-width="5"></circle>
+
+    <!-- Line -->
+
+    <!-- <line> draws a line. -->
+
+    <!-- x1 and y1 attributes are the x and y cordinates of where the first point of the line will start. -->
+
+    <!-- x2 and y2 attributes are the x and y cordinates of where the second point of the line will end. -->
+
+    <!-- If we do not define a stroke the line will not be visiable. -->
+
+    <line x1="200" y1="200" x2="300" y2="300" stroke="black" stroke-width="5"></line>
+
+    <!-- Paths -->
+
+    <!-- The <path> element is the most powerful element in the SVG library of basic shapes. It can be used it to create lines, curves, arcs and more. -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths -->
+
+    <!-- The d attribute allows us to draw shapes inside of the <path> -->
+
+    <!-- M value inside of d, stands for Move-to. It surves as the starting point -->
+    <!-- M20 500 will start path at x-axis 20 and y-axis 500 -->
+
+    <!-- L draws a line. L takes two parameters—x and y coordinates—and draws a line from the current position to a new position. -->
+    <!-- L35 550 will draw a line from the starting point 35px in the x-axis direction and 550px in the y-axis direction. -->
+    <!--L 550 500 will continue drawing from previous line and draw 550px in x-axis direction and 550px in y-axis direction. -->
+
+    <!-- When we draw shapes using paths they usually have a fill in the empty space in between shapes with a fill color. -->
+    <!-- By default paths have a black fill color. -->
+
+    <!-- stroke-linejoing attribute allows us to control the look and how two connecting lines join. In the example
+        below we are making the intersection where the two lines join more round.
+    -->    
+
+    <path stroke="black" stroke-width="5" stroke-linejoin="round" fill="none" d="M20 500 L35 550 L550 550"></path>
+
+    <!-- Instead of using inline styles like we have been doing you can also use CSS to control these properties. -->
+
+</svg>
