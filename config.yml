@@ -26,3 +26,4 @@ PATHS:
   entries:
     - "src/assets/js/app.js"
     - "src/assets/js/shapes.js"
+    - "src/assets/js/app/datavis-2018/make-face.js"
