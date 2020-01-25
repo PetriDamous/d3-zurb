@@ -19,7 +19,7 @@ const svg = select('svg');
 // We can use the style() method to add inline styles to our element.
 // Works the same way as jQuery. Give it a property and a value.
 
-svg.style('background', 'red');/
+svg.style('background', 'red');
 
 */
 
