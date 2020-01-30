@@ -32,7 +32,7 @@ function loadConfig() {
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, javascript, images, copy), sass, styleGuide));
+ gulp.series(clean, gulp.parallel(pages, javascript, images, cvsFile, copy), sass, styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -159,6 +159,29 @@ function reload(done) {
   done();
 }
 
+// Copy cvs files to "dist" folder
+// In prodcution, the file is minified
+
+// function cvsFile() {
+//   return gulp.src(PATHS.src + '/assets/cvs')
+//     .pipe($.sourcemaps.init())
+//     .pipe($.babel({ignore: ['bar-chart.cvs']}))    
+//     .pipe($.if(PRODUCTION, $.uglify()
+//       .on('error', e => console.log(e)))
+//       )
+//     .pipe($.if(!PRODUCTION,
+//     $.sourcemaps.write())
+//     .pipe(gulp.dest(PATHS.dist + '/assets/cvs')));
+  
+// }
+
+function cvsFile() {
+  return gulp.src('src/assets/cvs/*.cvs')        
+          .pipe(gulp.dest('dist/assets/cvs'));
+  
+}
+
+
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, copy);
@@ -169,5 +192,7 @@ function watch() {
   gulp.watch('src/assets/scss/**/*.scss').on('all', sass);
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
-  gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, browser.reload));
+  gulp.watch('src/assets/cvs/*.cvs').on('all', gulp.series(cvsFile, browser.reload));
+  gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, browser.reload));  
 }
+                                                                                          

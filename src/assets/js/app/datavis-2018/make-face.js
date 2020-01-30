@@ -3,7 +3,7 @@ import { select, arc } from 'd3';
 const svg = select('svg');
 
 const svgWidth = +svg.attr('width');
-const svgHeight = parseFloat(svg.attr('height'));
+const svgHeight = +svg.attr('height');
 
 const cirRadius = 240;
 

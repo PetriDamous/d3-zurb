@@ -18,6 +18,7 @@ PATHS:
   assets:
     - "src/assets/**/*"
     - "!src/assets/{img,js,scss}/**/*"
+    - "src/assets/cvs/*"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "node_modules/foundation-sites/scss"
@@ -27,3 +28,4 @@ PATHS:
     - "src/assets/js/app.js"
     - "src/assets/js/shapes.js"
     - "src/assets/js/app/datavis-2018/make-face.js"
+    - "src/assets/js/app/datavis-2018/bar-chart.js"
